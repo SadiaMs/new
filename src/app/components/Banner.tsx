@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -45,11 +46,14 @@ const Banner = () => {
       </nav>
 
       <section className="relative w-full h-screen bg-yellow-200 flex items-center justify-center">
-        <img
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          src="/banner.jpg" // image path
-          alt="Dog Doctor"
-        />
+      
+<Image
+  className="absolute top-0 left-0 w-full h-full object-cover"
+  src={"/banner.jpg"} // image path
+  alt="Dog Doctor"
+  layout="fill" // ensures the image
+  priority // optional, use this if the image is above the fold and should be loaded first
+/>
         <div className="relative z-10 text-center text-white px-4">
           <h1 className=" text-yellow-500 text-4xl md:text-6xl font-bold mb-4">Caring for Your Furry Friends</h1>
           <p className=" font-mono text-yellow-200 text-lg md:text-2xl mb-6">
